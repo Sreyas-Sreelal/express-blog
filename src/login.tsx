@@ -2,7 +2,10 @@ import * as React from 'react';
 import {  Colors, Classes, Button } from '@blueprintjs/core';
 // import {  InputGroup } from '@blueprintjs/core'
 
-export class Login extends React.Component<any,any>{
+interface LoginProps{
+    OnLoggedIn:Function
+}
+export class Login extends React.Component<LoginProps,any>{
     constructor(props:any){
         super(props)
         this.state={
@@ -13,26 +16,23 @@ export class Login extends React.Component<any,any>{
         this.handleInputChange = this.handleInputChange.bind(this);
         this.SendPost = this.SendPost.bind(this);
     }
-    SendPost(){
-        let formData = new FormData();
+    async SendPost(){
+        let formData = new FormData(),response:Response;
         formData.append('Name', this.state.Name);
         formData.append('Password', this.state.Password);
-
-        fetch("http://localhost:5000/login",{
+        response = await fetch("http://localhost:8000/v1/login",{
             body: formData,
             method: "post"
-        }).then((response) => {
-            if(response.ok){
-               console.log("Logged in")
-               this.setState({autherror:''})
-            }else{
-                console.log("Authentication failed")
-                this.setState({autherror:'Invalid creditinals'})
-            }
-        }).catch(error => {
+        })
+        if(response.ok){
+            console.log("Logged in")
+            this.setState({autherror:''})
+            this.props.OnLoggedIn(this.state.Name,this.state.Password)
+        }else{
             console.log("Authentication failed")
             this.setState({autherror:'Invalid creditinals'})
-        })
+        }
+        
     }
 
     handleInputChange(event:any) {

@@ -171,6 +171,7 @@ canvas
   color:red;
   font-size:15px;
   font:bold;
+  padding-top: 10px;
 }
 #noposts{
   font-size: 45px;
@@ -178,4 +179,21 @@ canvas
   color:rgba(102, 13, 13, 0.657);
   text-align: center;
   padding-top: 20%;
+}
+#postform{
+  font-family:  'Roboto',sans-serif;
+  color:black;
+  margin: 25px;
+  padding-top: 40px;
+  padding-left: 40px;
+ 
+}
+#postform #titleinput{
+  width:50%;
+  height:30px;
+
+}
+#postform #contentinput{
+  width:50%;
+  height:100px;
 }

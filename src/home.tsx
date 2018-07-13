@@ -9,24 +9,22 @@ export class Home extends React.Component<any,any>{
             blogdata:[]
         }
         this.GetBlogPosts()
-        
     }
-    GetBlogPosts(){
-        fetch('http://localhost:5000/getposts',{
-                    method: 'GET',      
-            }).then((response) => {
-                if(response.ok){
-                    response.json().then(rawdata =>{
-                        this.setState({blogdata:rawdata})
-                    })
-                }else{
-                    console.log("No posts")
-                    this.setState({blogdata:null})
-                }
-            }).catch(error => {
-                console.log("Server Error")
+    
+    async GetBlogPosts(){
+            let response:Response;
+            response = await fetch('http://localhost:8000/v1/getposts',{
+                    method: 'get',
+            })
+            
+            if(response.ok){
+                let rawdata = await response.json()
+                this.setState({blogdata:rawdata})
+            }else{
+                console.log("No posts")
                 this.setState({blogdata:null})
-              })
+            }
+        
     }
 
     public render(){ 
@@ -38,8 +36,8 @@ export class Home extends React.Component<any,any>{
                         console.log("SD")
                         console.log(rows.Content)
                         return(<BlogCard key={i} title={rows.Title} content={rows.Content} name={rows.Name}/>)
-                    }
-                )}
+                    })
+                }
                 </div>
             )
         }else{

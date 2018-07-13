@@ -4,9 +4,13 @@
   "private": true,
   "dependencies": {
     "@blueprintjs/core": "^2.3.1",
+    "@types/cookies": "^0.7.1",
     "@types/react-router-dom": "^4.2.7",
     "ajv": "^6.5.2",
+    "cookies": "^0.7.1",
     "react": "^16.4.1",
+    "react-cookie": "^2.2.0",
+    "react-cookies": "^0.1.0",
     "react-dom": "^16.4.1",
     "react-router-dom": "^4.3.1",
     "react-scripts-ts": "2.16.0",
