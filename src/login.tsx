@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {  Colors, Classes, Button } from '@blueprintjs/core';
 // import {  InputGroup } from '@blueprintjs/core'
+import {END_POINT} from './App';
 
 interface LoginProps{
     OnLoggedIn:Function
@@ -20,7 +21,7 @@ export class Login extends React.Component<LoginProps,any>{
         let formData = new FormData(),response:Response;
         formData.append('Name', this.state.Name);
         formData.append('Password', this.state.Password);
-        response = await fetch("http://localhost:8000/v1/login",{
+        response = await fetch(END_POINT + "/v1/login",{
             body: formData,
             method: "post"
         })

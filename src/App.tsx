@@ -7,7 +7,11 @@ import {Home} from './home';
 import cookie from 'react-cookies';
 import { PostForm } from './postform';
 
-const COOKIE_OPTIONS: {
+export const API_HOST  = "localhost";
+export const	API_PORT = "8000";
+export const END_POINT = "http://" + API_HOST + ":" + API_PORT;
+
+export const COOKIE_OPTIONS: {
   path?: string;
   expires?: Date;
   maxAge?: number; 
@@ -15,8 +19,8 @@ const COOKIE_OPTIONS: {
   secure?: boolean;
   httpOnly?: boolean;
 } = {
-  path: 'localhost',
-  domain :'localhost'
+  path: API_HOST,
+  domain : API_HOST
 };
 
 class App extends React.Component<any,any>{

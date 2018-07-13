@@ -2,6 +2,8 @@ import * as React from 'react';
 // import {  Colors, Classes, Button } from '@blueprintjs/core';
 // import {  InputGroup } from '@blueprintjs/core'
 import {BlogCard} from './blogcards';
+import {END_POINT} from './App';
+
 export class Home extends React.Component<any,any>{
     constructor(props:any){
         super(props)
@@ -13,7 +15,7 @@ export class Home extends React.Component<any,any>{
     
     async GetBlogPosts(){
             let response:Response;
-            response = await fetch('http://localhost:8000/v1/getposts',{
+            response = await fetch(END_POINT + "/v1/getposts",{
                     method: 'get',
             })
             
