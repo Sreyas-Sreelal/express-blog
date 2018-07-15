@@ -211,3 +211,30 @@ canvas
 #bigheader{
   text-align: center;
 }
+#contentview{
+  padding-top: 20px;
+  text-align: center;
+}
+#contentview #title{
+  font-family: 'Knewave', cursive;
+  font-size: 3.6em;
+  color :#4A4A4A;
+  transition: color 0.3s ease;
+  transition-property: color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+  transition-delay: initial;
+} 
+#contentview #content{
+  font-family: 'Merriweather', serif;
+  font-size: 18px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+#contentview button{
+  font-size: 22px;
+  font-family:  'Roboto',sans-serif;
+}
+a:hover{
+  color: transparent;
+}
