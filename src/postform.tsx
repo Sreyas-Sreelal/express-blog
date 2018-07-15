@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Button,Classes, Label} from '@blueprintjs/core';
+import {Button,Classes, Label, TextArea} from '@blueprintjs/core';
 import cookie from 'react-cookies';
 import { COOKIE_OPTIONS, END_POINT } from './App';
 
@@ -71,7 +71,7 @@ export class PostForm extends React.Component<any,any>{
                     onChange={this.handleInputChange} 
                 /><br/><br/>
                 <Label text="Content" className={Classes.TEXT_MUTED}/>
-                <input 
+                <TextArea 
                     id="contentinput"
                     placeholder="Enter Content" 
                     name="Content" 
