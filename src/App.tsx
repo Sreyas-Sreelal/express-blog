@@ -6,8 +6,9 @@ import {Login} from './login';
 import {Home} from './home'; 
 import cookie from 'react-cookies';
 import { PostForm } from './postform';
+import { PostView } from './postview';
 
-export const API_HOST  = "192.168.1.2"; //I used exact ipv4 to speed up nginx reverse proxy.Please change it according 
+export const API_HOST  = "192.168.1.2"; // I used exact ipv4 to speed up nginx reverse proxy.Please change it according 
 export const	API_PORT = "8000";
 export const END_POINT = "http://" + API_HOST + ":" + API_PORT;
 
@@ -102,6 +103,11 @@ class App extends React.Component<any,any>{
           path="/" 
           exact
           component={Home}
+        />
+        <Route 
+          path="/viewpost/:PostID"
+          exact 
+          component={PostView}
         />
       </div>
     );
