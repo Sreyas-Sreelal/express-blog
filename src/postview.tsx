@@ -2,6 +2,7 @@ import * as React from 'react';
 import cookies from 'react-cookies';
 import { END_POINT, COOKIE_OPTIONS } from './App';
 import { Button, Classes} from '@blueprintjs/core';
+const ReactMarkdown = require('react-markdown')
 
 interface PostContentProps{
     match: { params: { PostID: string; } };
@@ -62,9 +63,7 @@ export class PostView extends React.Component<PostContentProps,any>{
                         <div id="title">
                             {this.state.title}
                         </div>
-                        <div id="content">
-                            {this.state.content}
-                        </div>
+                        <ReactMarkdown id="content" className="content" source={this.state.content}/>
                         {this.state.loggedin ?(
                             <Button 
                                 className={Classes.INTENT_DANGER} 
@@ -74,7 +73,7 @@ export class PostView extends React.Component<PostContentProps,any>{
                             ):(
                                 <div/>
                         )}
-
+                        <hr/>    
                     </div>
                 ):(
                     <div id="error">

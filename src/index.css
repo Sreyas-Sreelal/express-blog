@@ -3,7 +3,6 @@ body {
   padding-top: 65px;
   width: 100%;
   height: 100%;
-
   background: #ffffffcc;
 }
 
@@ -63,7 +62,6 @@ hr
 
 #home #content
 {
-  
   font-size: 16px;
   -webkit-animation: fadein 3s; 
   -moz-animation: fadein 3s; 
@@ -225,16 +223,20 @@ canvas
   transition-timing-function: ease;
   transition-delay: initial;
 } 
-#contentview #content{
+#contentview .content{
   font-family: 'Merriweather', serif;
   font-size: 18px;
   padding-top: 20px;
   padding-bottom: 20px;
+  padding-left: 20px;
+  margin:50px;
+  text-align:justify;
+  
 }
 #contentview button{
   font-size: 22px;
   font-family:  'Roboto',sans-serif;
 }
-a:hover{
+#postbox a:hover{
   color: transparent;
 }
