@@ -156,16 +156,27 @@ canvas
 
 #postbox{
   padding-top: 25px;
+  margin-left: 30%;
+  margin-right: 30%;
+  text-align: center;
+
+  
 }
 #postbox h5{
-  font-size: 20px;
+  font-size: 30px;
   padding-bottom: 5px;
+  color:rgba(37, 10, 10, 0.863);
   font-family: 'Roboto', sans-serif;
 }
-#postbox p{
+#postbox  #content{
   color:rgba(0, 0, 0, 0.438);
-  font-family: 'Roboto', sans-serif;
-  font-size: 15px;
+  font-family: 'Gaegu', cursive;
+  font-size: 20px;
+}
+#postbox  #bywho{
+  color:rgba(0, 0, 0, 0.925);
+  font-family: 'Gaegu', cursive;
+  font-size: 17px;
 }
 #autherror{
   color:red;
@@ -196,4 +207,7 @@ canvas
 #postform #contentinput{
   width:50%;
   height:100px;
+}
+#bigheader{
+  text-align: center;
 }
