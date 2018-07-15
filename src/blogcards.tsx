@@ -16,9 +16,13 @@ export class BlogCard extends React.Component<BlogProps> {
             <div id="postbox">
                 <Card interactive={true} elevation={Elevation.TWO}>
                     <h5>{this.props.title}</h5>
-                    <p>{this.props.content}</p>
+                    <p id="content">{    
+                        (this.props.content.length>50)?
+                        (this.props.content.slice(0,50) + "...")
+                        :(this.props.content)
+                    }</p>
 
-                    <p>{"By " + this.props.name}</p>
+                    <p id="bywho">{"By " + this.props.name}</p>
                 </Card>
             </div>
         )
