@@ -35,7 +35,6 @@ export class Home extends React.Component<any,any>{
                 <div id="blogcontent">
                 {
                     this.state.blogdata.map(function(rows:any,i:number){
-                        console.log("SD")
                         console.log(rows.Content)
                         return(<BlogCard key={i} id={rows.PostID} title={rows.Title} content={rows.Content} name={rows.Name}/>)
                     })
