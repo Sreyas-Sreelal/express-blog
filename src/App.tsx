@@ -30,6 +30,7 @@ class App extends React.Component<any,any>{
     this.state={
       loggedin:cookie.load("loggedin"),
     };
+    this.OnUserLogout = this.OnUserLogout.bind(this);
   }
 
   OnUserLoggedIn(username:string,password:string){
@@ -42,7 +43,17 @@ class App extends React.Component<any,any>{
     cookie.save("name",username,options)
     cookie.save("password",password,options)
     location.href="/"
+  }
 
+  OnUserLogout(){
+    if(!this.state.loggedin){
+      location.href = "/"
+    }else{
+      cookie.remove("name", COOKIE_OPTIONS);
+      cookie.remove("password", COOKIE_OPTIONS);
+      cookie.remove("loggedin", COOKIE_OPTIONS);
+      location.href="/login"
+    }
   }
 
   public render() {
@@ -65,9 +76,15 @@ class App extends React.Component<any,any>{
                   <Button className={Classes.MINIMAL} text="Login" />
                 </Link>
                 ):(
-                  <Link to={'/post'} >
-                  <Button className={Classes.MINIMAL} text="Post" />
-                </Link>
+                  <div>
+                    <Link to={'/post'} >
+                      <Button className={Classes.MINIMAL} text="Post" />
+                    </Link>
+                    <Link to={'/logout'} >
+                      <Button className={Classes.MINIMAL} text="Logout" onClick={this.OnUserLogout} />
+                    </Link>
+                  </div>
+
                 )
               }
           </NavbarGroup>
